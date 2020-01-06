@@ -370,7 +370,7 @@ public class ImageMarkerManager extends ReactContextBaseJavaModule {
                 textWidth = (int) Math.ceil(Math.max(textWidth, textLayout.getLineWidth(a) + textLayout.getLineLeft(a)));
             }
 
-            int margin = 20;
+            int margin = 0;
             float x = margin;
             float y = margin;
 
@@ -405,9 +405,12 @@ public class ImageMarkerManager extends ReactContextBaseJavaModule {
                 Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG | Paint.LINEAR_TEXT_FLAG);
                 paint.setStyle(Paint.Style.FILL);
                 paint.setColor(textBackgroundStyle.color);
+
                 if("stretchX".equals(textBackgroundStyle.type)) {
+                    paint.setAlpha(100);
                     canvas.drawRect(0, y - textBackgroundStyle.paddingY, width, y + textHeight + textBackgroundStyle.paddingY, paint);
                 } else if("stretchY".equals(textBackgroundStyle.type)) {
+                    paint.setAlpha(100);
                     canvas.drawRect(x - textBackgroundStyle.paddingX, 0, x + textWidth + textBackgroundStyle.paddingX, height, paint);
                 } else {
                     canvas.drawRect(x - textBackgroundStyle.paddingX, y - textBackgroundStyle.paddingY, 
