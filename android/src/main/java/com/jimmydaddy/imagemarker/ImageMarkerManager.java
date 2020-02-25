@@ -407,10 +407,10 @@ public class ImageMarkerManager extends ReactContextBaseJavaModule {
                 paint.setColor(textBackgroundStyle.color);
 
                 if("stretchX".equals(textBackgroundStyle.type)) {
-                    paint.setAlpha(100);
+                    paint.setAlpha(165);
                     canvas.drawRect(0, y - textBackgroundStyle.paddingY, width, y + textHeight + textBackgroundStyle.paddingY, paint);
                 } else if("stretchY".equals(textBackgroundStyle.type)) {
-                    paint.setAlpha(100);
+                    paint.setAlpha(165);
                     canvas.drawRect(x - textBackgroundStyle.paddingX, 0, x + textWidth + textBackgroundStyle.paddingX, height, paint);
                 } else {
                     canvas.drawRect(x - textBackgroundStyle.paddingX, y - textBackgroundStyle.paddingY, 
