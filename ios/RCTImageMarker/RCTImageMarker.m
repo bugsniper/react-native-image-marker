@@ -114,8 +114,10 @@ UIImage * markerImgWithText(UIImage *image, NSString* text, CGFloat X, CGFloat Y
         CGContextRef context = UIGraphicsGetCurrentContext();
         CGContextSetFillColorWithColor(context, textBackground.colorBg.CGColor);
         if([textBackground.typeBg isEqualToString:@"stretchX"]) {
+			CGContextSetAlpha(context, 0.7);
             CGContextFillRect(context, CGRectMake(0, Y - textBackground.paddingY, w, size.height + 2*textBackground.paddingY));
         } else if([textBackground.typeBg isEqualToString:@"stretchY"]) {
+			CGContextSetAlpha(context, 0.7);
             CGContextFillRect(context, CGRectMake(X - textBackground.paddingX, 0, size.width + 2*textBackground.paddingX, h));
         } else {
             CGContextFillRect(context, CGRectMake(X - textBackground.paddingX, Y - textBackground.paddingY,
