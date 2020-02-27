@@ -280,8 +280,10 @@ UIImage * markerImgWithTextByPostion    (UIImage *image, NSString* text, MarkerP
         CGContextRef context = UIGraphicsGetCurrentContext();
         CGContextSetFillColorWithColor(context, textBackground.colorBg.CGColor);
         if([textBackground.typeBg isEqualToString:@"stretchX"]) {
+			CGContextSetAlpha(context, 0.7);
             CGContextFillRect(context, CGRectMake(0, posY - textBackground.paddingY, w, size.height + 2*textBackground.paddingY)); 
         } else if([textBackground.typeBg isEqualToString:@"stretchY"]) {
+			CGContextSetAlpha(context, 0.7);
             CGContextFillRect(context, CGRectMake(posX - textBackground.paddingX, 0, size.width + 2*textBackground.paddingX, h));   
         } else {
             CGContextFillRect(context, CGRectMake(posX - textBackground.paddingX, posY - textBackground.paddingY, 
