@@ -255,7 +255,7 @@ public class ImageMarkerManager extends ReactContextBaseJavaModule {
                 bos = new BufferedOutputStream(new FileOutputStream(dest));
 
 //            int quaility = (int) (100 / percent > 80 ? 80 : 100 / percent);
-                icon.compress(getSaveFormat(saveFormat), quality, bos);
+                icon.compress(Bitmap.CompressFormat.PNG, quality, bos);
                 bos.flush();
                 bos.close();
                 //保存成功的
