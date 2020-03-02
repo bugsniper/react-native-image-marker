@@ -91,7 +91,7 @@ public class ImageMarkerManager extends ReactContextBaseJavaModule {
     }
 
     private Bitmap.CompressFormat getSaveFormat(String saveFormat) {
-        return saveFormat != null && (saveFormat.equals("png") || saveFormat.equals("PNG"))? Bitmap.CompressFormat.PNG : Bitmap.CompressFormat.JPEG;
+        return saveFormat != null && (saveFormat.equals("png") || saveFormat.equals("PNG"))? Bitmap.CompressFormat.PNG : Bitmap.CompressFormat.PNG;
     }
 
     private void setMaxBitmapSize(int maxSize) {
@@ -432,7 +432,7 @@ public class ImageMarkerManager extends ReactContextBaseJavaModule {
                 promise.resolve("data:image/png;base64,".concat(result));
             } else {
                 bos = new BufferedOutputStream(new FileOutputStream(dest));
-                icon.compress(getSaveFormat(saveFormat) , quality, bos);
+                icon.compress(Bitmap.CompressFormat.PNG, quality, bos);
                 bos.flush();
                 bos.close();
                 //保存成功的
